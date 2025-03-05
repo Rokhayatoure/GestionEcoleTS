@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "tsc && node dist/main.js"
   },
   "devDependencies": {
     "@types/node": "^22.13.8",
