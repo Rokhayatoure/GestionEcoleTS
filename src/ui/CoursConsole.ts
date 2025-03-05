@@ -1,5 +1,6 @@
-import * as readline from "readline-sync";
+// import * as readline from "readline-sync";
 import { MenuPrinciplae } from "./MenuePrincipale";
+
 
 
   export class CoursConsole{
