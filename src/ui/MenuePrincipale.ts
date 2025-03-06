@@ -1,41 +1,51 @@
 import * as readline from "readline-sync";
 import { CoursConsole } from "./CoursConsole";
 
-  export class MenuPrinciplae{
+export class MenuPrinciplae {
+    static MenuePRincipale(): void {
+        console.clear();
+        console.log("==== Gestion des Rendez-vous ====");
+        console.log("\n1 - Gérer Les Cours");
+        console.log("\n2 - Gérer les Filières");
+        console.log("\n3 - Gérer les Classes");
+        console.log("\n4 - Gérer les Niveaux");
+        console.log("\n5 - Quitter");
 
-     static  MenuePRincipale () {
+        let choix = parseInt(this.choix()); // Demande un choix à l'utilisateur
 
-        console.log("==== Gestion de Rendez-vous ====")
-        console.log("\n1 - Gérer Les Cours ")
-        console.log("\n2 - Gérer les Filiere")
-        console.log("\n3 - Gérer les Classes")
-        console.log("\n3 - Gérer les Niveaux")
-        console.log("\n4 - Quitter -->")
-}
-
-    static choix() : string {
-        return readline.question("\nVotre choix : ");
-    }
-    
-    static traiterChoix(choix:number): void {
-        switch (choix) {
-            case 1:
-                CoursConsole.menuCours;
-                break;
-            case 2:
-                // this.menuPatient();
-                break;
-            case 3:
-                // this.menuRv();
-                break;
-            case 4:
-                // this.afficherMenu();
-                break;
-            default: console.log("\nVotre choix est invalide... !")
+        if (choix === 5) {  
+            console.log("\nMerci d'avoir utilisé le programme. Au revoir !");
+            process.exit(0);  // Quitte proprement l'exécution
+        } else {
+            this.traiterChoix(choix);
         }
     }
-    static patienter(): string {
-        let gogo = readline.question("\nAppuyer pour continuer : ");
-        return gogo
+
+    static choix(): string {
+        return readline.question("\nVotre choix : ");
+    }
+
+    static traiterChoix(choix: number): void {
+        switch (choix) {
+            case 1:
+                CoursConsole.menuCours();  
+                break;
+            case 2:
+                console.log("Gestion des Filières (à implémenter)");
+                break;
+            case 3:
+                console.log("Gestion des Classes (à implémenter)");
+                break;
+            case 4:
+                console.log("Gestion des Niveaux (à implémenter)");
+                break;
+            default:
+                console.log("\nVotre choix est invalide... !");
+        }
+        this.patienter();
+    }
+
+    static patienter(): void {
+        readline.question("\nAppuyez sur une touche pour continuer...");
     }
 }

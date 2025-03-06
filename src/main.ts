@@ -1,10 +1,5 @@
 import { MenuPrinciplae } from "./ui/MenuePrincipale";
 
-let quitter: boolean = true;
-
-while (quitter) {
+while (true) {  // Garde le menu actif
     MenuPrinciplae.MenuePRincipale();
-    let choix: string = MenuPrinciplae.choix();
-    if (choix == "2") break;
-    MenuPrinciplae.traiterChoix(parseInt(choix));
 }
