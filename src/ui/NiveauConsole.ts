@@ -1,17 +1,15 @@
 import {MenuPrinciplae} from "./MenuePrincipale";
+import {NiveauService} from "../services/NiveauService";
 import * as readline from "readline-sync";
-import {FiliereService} from "../services/FiliereService";
 
-
-export class FiliereConsole {
-
-    static menuFiliere() {
-        console.log("※※※▷ Gestion des filières ◁※※※");
+export class NiveauConsole {
+    static menuNiveau() {
+        console.log("※※※▷ Gestion des niveaux ◁※※※");
         console.log(
-            "\n1 - Afficher les filières",
-            "\n2 - Ajouter une filière",
-            "\n3 - Modifier une filière",
-            "\n4 - Supprimer une filière",
+            "\n1 - Afficher les niveaux",
+            "\n2 - Ajouter une niveau",
+            "\n3 - Modifier une niveau",
+            "\n4 - Supprimer une niveau",
             "\n5 - ⇚ Retour"
         );
 
@@ -20,27 +18,26 @@ export class FiliereConsole {
 
         switch (choix) {
             case 1:
-                FiliereService.showFiliere()
+                NiveauService.showNiveau()
                 break;
             case 2:
-                FiliereService.addFiliere()
+                NiveauService.addNiveau()
                 break;
             case 3:
-                FiliereService.updateFiliere()
+                NiveauService.updateNiveau()
                 break;
             case 4:
-                FiliereService.deleteFiliere()
+                NiveauService.deleteNiveau()
                 break;
             case 5:
                 MenuPrinciplae.MenuePRincipale()
                 break;
             default:
                 console.log("\nChoix invalide !");
-                FiliereConsole.menuFiliere()
+                NiveauConsole.menuNiveau()
                 break;
         }
     }
-
 }
 
-export default FiliereConsole
+export default NiveauConsole

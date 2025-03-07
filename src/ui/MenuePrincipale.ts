@@ -1,6 +1,7 @@
 import * as readline from "readline-sync";
 import { CoursConsole } from "./CoursConsole";
 import FiliereConsole from "./FiliereConsole";
+import NiveauConsole from "./NiveauConsole";
 
 export class MenuPrinciplae {
     static MenuePRincipale(): void {
@@ -38,7 +39,7 @@ export class MenuPrinciplae {
                 console.log("Gestion des Classes (à implémenter)");
                 break;
             case 4:
-                console.log("Gestion des Niveaux (à implémenter)");
+                NiveauConsole.menuNiveau();
                 break;
             default:
                 console.log("\nVotre choix est invalide... !");

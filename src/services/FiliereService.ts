@@ -1,6 +1,6 @@
-import {Filiere} from "../model/Filiere";
-import FiliereConsole from "../ui/FiliereConsole";
-import * as readline from "readline-sync";
+    import {Filiere} from "../model/Filiere";
+    import FiliereConsole from "../ui/FiliereConsole";
+    import * as readline from "readline-sync";
 
 export namespace FiliereService {
     let filieres: Filiere[] = [];
@@ -26,16 +26,16 @@ export namespace FiliereService {
         FiliereConsole.menuFiliere()
     }
 
-    export function modifyFiliere(): void {
+    export function updateFiliere(): void {
         console.log("Traitement modification de filière...")
         const idF:number = readline.questionInt("Entrez l'ID de la filière à modifier: ")
-        const filier = filieres.find(f => f.id === idF)
-        if (filier) {
+        const fili = filieres.find(fl => fl.id === idF)
+        if (fili) {
             const nouveauNom = readline.question("Nouveau nom de la filière : ");
-            filier.nom = nouveauNom;
+            fili.nom = nouveauNom;
             console.log(`Filière modifiée : "${nouveauNom}"`);
         } else {
-            console.log("ID invalide !");
+            console.log("Correspondant non trouvé !");
         }
         FiliereConsole.menuFiliere();
     }
@@ -43,9 +43,13 @@ export namespace FiliereService {
     export function deleteFiliere(): void {
         console.log("Traitement suppression de filière...")
         const idF:number = readline.questionInt("Entrez l'ID de la filière: ")
-        if (idF >= 0 && idF < filieres.length) {
-            const delFiliere =  filieres.splice(idF, 1)
-            console.log(`Filière "${delFiliere[0].nom}" supprimée ⌀`);
+        const fili = filieres.findIndex(fl => fl.id === idF)
+        if (fili !== -1) {
+            const delFiliere =  filieres.splice(idF, 1)[0]
+            console.log(`Filière "${delFiliere.nom}" supprimée ⌀`);
+        }
+        else {
+            console.log("L'ID saisie n'a pas de correspondance !")
         }
     }
 }
