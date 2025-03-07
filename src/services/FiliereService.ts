@@ -29,9 +29,10 @@ export namespace FiliereService {
     export function modifyFiliere(): void {
         console.log("Traitement modification de filière...")
         const idF:number = readline.questionInt("Entrez l'ID de la filière à modifier: ")
-        if (idF > 0 && idF < filieres.length) {
+        const filier = filieres.find(f => f.id === idF)
+        if (filier) {
             const nouveauNom = readline.question("Nouveau nom de la filière : ");
-            filieres[idF].nom = nouveauNom;
+            filier.nom = nouveauNom;
             console.log(`Filière modifiée : "${nouveauNom}"`);
         } else {
             console.log("ID invalide !");
