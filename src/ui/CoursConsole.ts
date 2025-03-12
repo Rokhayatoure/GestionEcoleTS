@@ -34,7 +34,8 @@ export class CoursConsole {
                 this.supprimerCours();
                 break;
             case 5:
-                return; // Retourner au menu principal
+                MenuPrinciplae.MenuePRincipale()
+                break;// Retourner au menu principal
             default:
                 console.log("\nChoix invalide !");
         }

@@ -1,5 +1,9 @@
 import * as readline from "readline-sync";
 import { CoursConsole } from "./CoursConsole";
+import FiliereConsole from "./FiliereConsole";
+import NiveauConsole from "./NiveauConsole";
+// import {} ;
+import { EtudiantConsole } from "./EtudiantConsole";
 
 export class MenuPrinciplae {
     static MenuePRincipale(): void {
@@ -32,16 +36,20 @@ export class MenuPrinciplae {
                 CoursConsole.menuCours();  
                 break;
             case 2:
-                console.log("Gestion des Filières (à implémenter)");
+                FiliereConsole.menuFiliere()
                 break;
             case 3:
-                console.log("Gestion des Classes (à implémenter)");
+            //    ClasseConsole.menuClasse() ;
                 break;
             case 4:
-                console.log("Gestion des Niveaux (à implémenter)");
+                NiveauConsole.menuNiveau();
                 break;
+                case 5:
+                    EtudiantConsole.menuEtudiant();
+                    break;
             default:
                 console.log("\nVotre choix est invalide... !");
+                MenuPrinciplae.MenuePRincipale()
         }
         this.patienter();
     }
