@@ -3,6 +3,7 @@ import { CoursConsole } from "./CoursConsole";
 
 export class MenuPrinciplae {
     static MenuePRincipale(): void {
+        
         console.clear();
         console.log("==== Gestion des Rendez-vous ====");
         console.log("\n1 - Gérer Les Cours");
@@ -14,7 +15,7 @@ export class MenuPrinciplae {
         let choix = parseInt(this.choix()); // Demande un choix à l'utilisateur
 
         if (choix === 5) {  
-            console.log("\nMerci d'avoir utilisé le programme. Au revoir !");
+            console.log("\n Merci d'avoir utilisé le programme. Au revoir !");
             process.exit(0);  // Quitte proprement l'exécution
         } else {
             this.traiterChoix(choix);
